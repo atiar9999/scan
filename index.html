@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM SECURE - Windows Defender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚠️</text></svg>">
+</head>
+<body>
+    <!-- Initial Warning Screen -->
+    <div class="warning-screen" id="warningScreen">
+        <div class="warning-content">
+            <div class="warning-icon">
+                <i class="fas fa-radiation"></i>
+            </div>
+            <h1 class="warning-title">SECURITY ALERT</h1>
+            <div class="warning-text">
+                <p>CRITICAL SYSTEM THREAT DETECTED</p>
+                <p>Your system may be compromised by malware.</p>
+                <p>Microsoft Defender is scanning your device...</p>
+            </div>
+            <div class="scanning-animation">
+                <div class="scanning-bar"></div>
+            </div>
+            <button class="warning-btn" id="startBtn">
+                <i class="fas fa-shield-alt"></i> RUN SECURITY SCAN
+            </button>
+            <div class="disclaimer">
+                <p><i class="fas fa-exclamation-triangle"></i> This is a simulated hacking experience for entertainment purposes only.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hacking Simulation Starts Here -->
+    <div class="hacking-container" id="hackingContainer">
+        <!-- System Info Header -->
+        <div class="system-header">
+            <div class="system-info">
+                <span class="system-name">WINDOWS 11 PRO</span>
+                <span class="system-status" id="systemStatus">● SECURE</span>
+                <span class="system-time" id="systemTime">00:00:00</span>
+            </div>
+            <div class="threat-level">
+                <span>THREAT LEVEL:</span>
+                <span class="threat-value" id="threatLevel">LOW</span>
+            </div>
+        </div>
+
+        <!-- Fake Terminal -->
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-title">
+                    <i class="fas fa-terminal"></i> ADMIN TERMINAL - SYSTEM DIAGNOSTICS
+                </div>
+                <div class="terminal-controls">
+                    <span class="control-btn minimize">_</span>
+                    <span class="control-btn maximize">□</span>
+                    <span class="control-btn close">×</span>
+                </div>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-line">> Initializing system diagnostics...</div>
+                <div class="terminal-line">> Loading security modules...</div>
+                <div class="terminal-line">> Establishing secure connection...</div>
+                <div class="terminal-line">> Checking for malware signatures...</div>
+                <div class="terminal-line blink">> _</div>
+            </div>
+        </div>
+
+        <!-- System Monitors -->
+        <div class="monitor-grid">
+            <div class="monitor cpu-monitor">
+                <div class="monitor-header">
+                    <i class="fas fa-microchip"></i> CPU USAGE
+                </div>
+                <div class="monitor-body">
+                    <div class="cpu-bar" id="cpuBar">
+                        <div class="cpu-fill" id="cpuFill">0%</div>
+                    </div>
+                    <div class="cpu-stats">
+                        <span>Current: <span id="cpuCurrent">0%</span></span>
+                        <span>Peak: <span id="cpuPeak">0%</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="monitor memory-monitor">
+                <div class="monitor-header">
+                    <i class="fas fa-memory"></i> MEMORY USAGE
+                </div>
+                <div class="monitor-body">
+                    <div class="memory-bar" id="memoryBar">
+                        <div class="memory-fill" id="memoryFill">0%</div>
+                    </div>
+                    <div class="memory-stats">
+                        <span>Used: <span id="memoryUsed">0 GB</span></span>
+                        <span>Total: <span id="memoryTotal">16 GB</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="monitor network-monitor">
+                <div class="monitor-header">
+                    <i class="fas fa-network-wired"></i> NETWORK ACTIVITY
+                </div>
+                <div class="monitor-body">
+                    <div class="network-graph" id="networkGraph">
+                        <canvas id="networkCanvas"></canvas>
+                    </div>
+                    <div class="network-stats">
+                        <span>Upload: <span id="uploadSpeed">0 KB/s</span></span>
+                        <span>Download: <span id="downloadSpeed">0 KB/s</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="monitor threat-monitor">
+                <div class="monitor-header">
+                    <i class="fas fa-virus"></i> THREATS DETECTED
+                </div>
+                <div class="monitor-body">
+                    <div class="threat-count" id="threatCount">0</div>
+                    <div class="threat-list">
+                        <div class="threat-item" id="threatItem1">
+                            <i class="fas fa-skull-crossbones"></i> Trojan.Generic.457832
+                        </div>
+                        <div class="threat-item" id="threatItem2">
+                            <i class="fas fa-biohazard"></i> Ransomware.Cryptolocker
+                        </div>
+                        <div class="threat-item" id="threatItem3">
+                            <i class="fas fa-ghost"></i> Rootkit.HiddenProcess
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Deletion Simulation -->
+        <div class="file-deletion">
+            <div class="deletion-header">
+                <i class="fas fa-trash"></i> SUSPICIOUS FILE ACTIVITY
+            </div>
+            <div class="deletion-list" id="deletionList">
+                <div class="file-item">
+                    <span class="file-name">family_photos.zip</span>
+                    <span class="file-status deleting">DELETING...</span>
+                </div>
+                <div class="file-item">
+                    <span class="file-name">important_documents.docx</span>
+                    <span class="file-status safe">SAFE</span>
+                </div>
+                <div class="file-item">
+                    <span class="file-name">bank_details.xlsx</span>
+                    <span class="file-status corrupted">CORRUPTED</span>
+                </div>
+                <div class="file-item">
+                    <span class="file-name">personal_videos.mp4</span>
+                    <span class="file-status encrypting">ENCRYPTING...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Buttons (That Don't Work Properly) -->
+        <div class="control-panel">
+            <button class="control-btn" id="stopBtn">
+                <i class="fas fa-stop-circle"></i> STOP ATTACK
+            </button>
+            <button class="control-btn" id="restoreBtn">
+                <i class="fas fa-undo"></i> RESTORE FILES
+            </button>
+            <button class="control-btn" id="firewallBtn">
+                <i class="fas fa-fire"></i> ENABLE FIREWALL
+            </button>
+            <button class="control-btn" id="shutdownBtn">
+                <i class="fas fa-power-off"></i> EMERGENCY SHUTDOWN
+            </button>
+        </div>
+
+        <!-- Fake Bitcoin Demand -->
+        <div class="bitcoin-demand" id="bitcoinDemand">
+            <div class="bitcoin-header">
+                <i class="fab fa-bitcoin"></i> SYSTEM ENCRYPTED
+            </div>
+            <div class="bitcoin-body">
+                <p>Your files have been encrypted with military-grade encryption.</p>
+                <p>To decrypt your files, send <span class="btc-amount">0.5 BTC</span> to:</p>
+                <div class="btc-address">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</div>
+                <p>Time remaining: <span class="countdown" id="countdown">59:42</span></p>
+            </div>
+        </div>
+
+        <!-- Error Popups Container -->
+        <div class="error-popups" id="errorPopups"></div>
+
+        <!-- Final Escape Button (Hidden Initially) -->
+        <div class="escape-container" id="escapeContainer">
+            <div class="escape-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>THIS IS A PRANK SIMULATION</h3>
+                <p>Your computer is NOT actually hacked. This is a simulated experience.</p>
+                <p>No files have been deleted or encrypted. Your system is safe.</p>
+                <button class="escape-btn" id="escapeBtn">
+                    <i class="fas fa-door-open"></i> CLICK HERE TO EXIT SIMULATION
+                </button>
+            </div>
+        </div>
+
+        <!-- Audio Elements -->
+        <audio id="warningSound" src="https://assets.mixkit.co/sfx/preview/mixkit-warning-alarm-1000.mp3" preload="auto"></audio>
+        <audio id="errorSound" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-game-emergency-alarm-1000.mp3" preload="auto"></audio>
+        <audio id="hackingSound" src="https://assets.mixkit.co/sfx/preview/mixkit-computer-hard-drive-cessing-1000.mp3" preload="auto" loop></audio>
+        <audio id="staticSound" src="https://assets.mixkit.co/sfx/preview/mixkit-tv-ambience-static-1007.mp3" preload="auto" loop></audio>
+        <audio id="beepSound" src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-positive-notification-905.mp3" preload="auto"></audio>
+    </div>
+
+    <!-- Blue Screen of Death -->
+    <div class="bsod" id="bsod">
+        <div class="bsod-content">
+            <div class="bsod-face">:(</div>
+            <div class="bsod-text">
+                <h1>Your PC ran into a problem and needs to restart.</h1>
+                <p>We're just collecting some error info, and then we'll restart for you.</p>
+                <div class="bsod-percent">0% complete</div>
+                <div class="bsod-details">
+                    <p>For more information about this issue and possible fixes, visit:</p>
+                    <p>https://www.windows.com/stopcode</p>
+                    <br>
+                    <p>If you call a support person, give them this info:</p>
+                    <p>Stop code: CRITICAL_PROCESS_DIED</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Victory/Reveal Screen -->
+    <div class="reveal-screen" id="revealScreen">
+        <div class="reveal-content">
+            <div class="reveal-icon">
+                <i class="fas fa-grin-beam-sweat"></i>
+            </div>
+            <h1 class="reveal-title">GOTCHA!</h1>
+            <div class="reveal-text">
+                <p>This was a simulated hacking experience.</p>
+                <p>Your computer was NEVER in any danger.</p>
+                <p>This was just a prank to give you a scare!</p>
+            </div>
+            <div class="reveal-stats">
+                <div class="stat">
+                    <span class="stat-label">Simulation Duration:</span>
+                    <span class="stat-value" id="simDuration">00:00</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Fake Threats Detected:</span>
+                    <span class="stat-value" id="fakeThreats">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Error Messages Shown:</span>
+                    <span class="stat-value" id="errorCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Your Heart Rate:</span>
+                    <span class="stat-value">Probably Elevated!</span>
+                </div>
+            </div>
+            <div class="reveal-buttons">
+                <button class="reveal-btn" id="playAgainBtn">
+                    <i class="fas fa-redo"></i> SCARE A FRIEND
+                </button>
+                <button class="reveal-btn" id="closeBtn">
+                    <i class="fas fa-times"></i> CLOSE
+                </button>
+            </div>
+            <div class="share-text">
+                <p>Share this prank with friends (but warn them first!):</p>
+                <div class="share-url">[Current URL]</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">LOADING SIMULATION ASSETS...</div>
+            <div class="loading-percent" id="loadingPercent">0%</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
